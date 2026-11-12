@@ -1,64 +1,39 @@
 'use strict';
-const $ = id => document.getElementById(id);
-let rug = window.RUGS[0], space = rug.spaces[0], rotated = false, favorites = [];
-try { const saved = JSON.parse(localStorage.getItem('one-rug-favorites') || '[]'); if (Array.isArray(saved)) favorites = saved.filter(x => typeof x === 'string'); } catch (_) {}
-const key = () => `${rug.id}:${space.id}`;
-function status(message) { $('status').textContent = message; }
-function element(tag, text, className) { const node = document.createElement(tag); if (text != null) node.textContent = text; if (className) node.className = className; return node; }
-function favoriteState() { const saved = favorites.includes(key()); $('favorite').textContent = saved ? '♥ Saved' : '♡ Save'; $('favorite').setAttribute('aria-pressed', String(saved)); }
-function render() {
-  $('rug-title').textContent = rug.title; $('rug-id').textContent = `RUG ${rug.id.toUpperCase()}`;
-  $('rug-facts').textContent = `${rug.material} · ${rug.widthCm} × ${rug.lengthCm} cm`;
-  $('rug-photo').src = rug.image; $('rug-photo').alt = rug.alt; $('plan-rug').src = rug.image;
-  $('space-tabs').replaceChildren(...rug.spaces.map((item, index) => { const b = element('button', `${String(index + 1).padStart(2,'0')} / ${item.id.replaceAll('-',' ')}`); b.setAttribute('aria-pressed', String(item.id === space.id)); b.onclick = () => { space = item; render(); }; return b; }));
-  for (const id of ['mood','description','placement','caution']) $(id).textContent = space[id];
-  $('space-title').textContent = space.name;
-  $('palette').replaceChildren(...space.palette.map(color => {
-    const b = element('button', null, 'swatch'); b.setAttribute('aria-label',`Copy ${color.name}, ${color.hex}`);
-    const block = element('span', null, 'color-block'); block.style.background = color.hex;
-    b.append(block, element('strong',color.name),element('small',color.hex));
-    b.onclick = async () => { try { await navigator.clipboard.writeText(color.hex); status(`${color.name}: ${color.hex} copied.`); } catch (_) { status(`Copy this colour code: ${color.hex}`); } }; return b;
-  }));
-  $('furniture').replaceChildren(...space.furniture.map(t => element('li',t)));
-  $('room-width').value = space.room.width; $('room-depth').value = space.room.depth;
-  rotated = false; $('rotate').setAttribute('aria-pressed','false'); favoriteState(); renderPlan(); renderComparison();
-}
-function renderPlan() {
-  const width = Number($('room-width').value), depth = Number($('room-depth').value);
-  const valid = [width,depth].every(x => Number.isFinite(x) && x >= 2 && x <= 8);
-  for (const id of ['room-width','room-depth']) { const input = $(id); const n = Number(input.value); input.setAttribute('aria-invalid',String(!Number.isFinite(n) || n < 2 || n > 8)); }
-  $('room-plan').hidden = !valid;
-  if (!valid) { $('scale-note').textContent = 'Enter a room width and depth between 2 and 8 metres.'; return; }
-  const planWidth = Math.min(350 * width / depth, 350, Math.max(150, $('room-plan').parentElement.clientWidth - 50));
-  $('room-plan').style.width = `${planWidth}px`; $('room-plan').style.height = `${planWidth * depth / width}px`;
-  const rw = (rotated ? rug.lengthCm : rug.widthCm) / 100, rh = (rotated ? rug.widthCm : rug.lengthCm) / 100;
-  const photo = $('plan-rug');
-  // Rotate the image itself; preserve its original width:length ratio in either orientation.
-  photo.style.width = `${rug.widthCm / 100 / width * planWidth}px`;
-  photo.style.height = `${rug.lengthCm / 100 / width * planWidth}px`;
-  photo.style.transform = `translate(-50%,-50%) rotate(${rotated ? 90 : 0}deg)`;
-  const fits = rw <= width && rh <= depth; photo.hidden = !fits;
-  $('scale-note').textContent = fits ? `Example room: ${width} × ${depth} m. Rug: ${rw.toFixed(2)} × ${rh.toFixed(2)} m (${(rw*rh/(width*depth)*100).toFixed(1)}% of floor area).` : 'The rug does not fit this room in the selected orientation. Increase the room size or rotate it.';
-  $('furniture-marker').textContent = space.furniture[0];
-}
-function renderComparison() {
-  const grid = element('div',null,'compare-grid');
-  for (const item of rug.spaces) { const card = element('article',null,'compare-card'); const colors = element('div',null,'mini-colors'); colors.setAttribute('aria-label',item.palette.map(x=>x.name).join(', '));
-    item.palette.forEach(c=>{const s=element('span');s.style.background=c.hex;colors.append(s);});
-    const choose=element('button','Explore this space');choose.onclick=()=>{space=item;render();$('explore').scrollIntoView();document.querySelector('#space-tabs button')?.focus();};
-    card.append(element('h3',item.name),colors,element('p',item.mood),element('p',item.placement),choose);grid.append(card);
-  } $('compare-content').replaceChildren(grid);
-}
-$('rug-select').replaceChildren(...window.RUGS.map(r=>{const option=element('option',`${r.id.toUpperCase()} — ${r.title}`);option.value=r.id;return option;}));
-$('rug-select').onchange = e => { rug = window.RUGS.find(r=>r.id===e.target.value); space = rug.spaces[0]; render(); };
-$('favorite').onclick = () => { favorites = favorites.includes(key()) ? favorites.filter(x=>x!==key()) : [...favorites,key()];favoriteState();try{localStorage.setItem('one-rug-favorites',JSON.stringify(favorites));status('Selection updated on this device.');}catch(_){status('Selection updated for this visit; browser storage is unavailable.');} };
-$('room-width').oninput = renderPlan; $('room-depth').oninput = renderPlan;
-$('rotate').onclick = () => {rotated=!rotated;$('rotate').setAttribute('aria-pressed',String(rotated));renderPlan();};
-$('compare-toggle').onclick = () => {const open=$('compare-content').hidden;$('compare-content').hidden=!open;$('compare-toggle').textContent=open?'Hide comparison':'Show comparison';$('compare-toggle').setAttribute('aria-expanded',String(open));};
-$('export').onclick = () => {
-  const text = [`ONE RUG, THREE SPACES`,`${rug.id.toUpperCase()} — ${rug.title}`,`Catalog: ${rug.material}, ${rug.widthCm} × ${rug.lengthCm} cm`,`Concept: ${space.name}`,space.mood,space.description,'',`Palette: ${space.palette.map(c=>`${c.name} ${c.hex}`).join(', ')}`,...space.furniture.map(t=>`- ${t}`),'',space.placement,space.caution,'', $('scale-note').textContent,`Rotation: ${rotated?'90 degrees':'0 degrees'}`,'Hypothetical styling concept; not a real installation or a provenance claim.',`Source: ${rug.sourceId}. See docs/sources.md.`].join('\n');
-  const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})); const a=element('a');a.href=url;a.download=`${rug.id}-${space.id}-concept.txt`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status('Selected concept exported as a text file.');
-};
-$('print').onclick = () => window.print();
-window.addEventListener('resize',renderPlan);render();
-
+const $=id=>document.getElementById(id),G=window.RugGeometry;
+const rooms=Array.from({length:window.SPACE_COUNT},(_,i)=>({name:`Space ${i+1}`,photo:null,corners:null,opacity:1,size:100,angle:0,token:0}));
+let active=0,favorite=null,rug=window.RUGS[0],texture=null,rugToken=0,before=false,drag=null;
+const canvas=$('canvas');
+function node(tag,text,cls){const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n;}
+function say(t){$('status').textContent=t;}
+function defaults(r){r.corners=[[.35,.5],[.65,.5],[.78,.85],[.22,.85]];r.size=100;r.angle=0;r.opacity=1;}
+function select(i){active=i;before=false;$('before').setAttribute('aria-pressed','false');$('before').textContent='Show original';sync();render();}
+function sync(){const r=rooms[active];$('controls').disabled=!r.photo||!texture;$('active-name').textContent=r.name;$('space-name').value=r.name;$('image-size').textContent=r.photo?`${r.photo.width} x ${r.photo.height} px - local preview`:'Add a room photo to begin';
+ for(const[id,value,suffix]of[['size',r.size,'%'],['angle',r.angle,' degrees'],['opacity',Math.round(r.opacity*100),'%']]){$(id).value=value;$(id+'-value').textContent=value+suffix;}
+ rooms.forEach((s,i)=>{const el=$('slot-'+i);el.classList.toggle('active',i===active);el.querySelector('.edit').textContent=`${String(i+1).padStart(2,'0')} / ${s.name}`;el.querySelector('.edit').setAttribute('aria-pressed',String(i===active));el.querySelector('.remove').disabled=!s.photo;el.querySelector('.file-info').textContent=s.photo?'Photo loaded - edits kept when switching spaces':'No photo yet';});}
+async function loadPhoto(file,index){const r=rooms[index],token=++r.token;if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>20*1024*1024){say('Choose a JPEG, PNG or WebP image no larger than 20 MB.');return;}
+ const url=URL.createObjectURL(file);let image=new Image();try{image.src=url;await image.decode();if(token!==r.token)return;if(image.naturalWidth*image.naturalHeight>40000000)throw Error('This image is too large. Use an image below 40 megapixels.');const factor=Math.min(1,1600/Math.max(image.naturalWidth,image.naturalHeight)),photo=document.createElement('canvas');photo.width=Math.round(image.naturalWidth*factor);photo.height=Math.round(image.naturalHeight*factor);photo.getContext('2d').drawImage(image,0,0,photo.width,photo.height);r.photo=photo;defaults(r);select(index);say(`${r.name} loaded locally. Drag the rug or its four corners.`);}catch(e){if(token===r.token)say(e.message.startsWith('This image')?e.message:'Could not read this photo. Please choose another JPEG, PNG or WebP.');}finally{URL.revokeObjectURL(url);image=null;}}
+async function loadRug(){const token=++rugToken;texture=null;sync();render();const image=new Image();try{image.src=rug.image;await image.decode();if(token!==rugToken)return;const[x,y,w,h]=rug.crop;texture=document.createElement('canvas');texture.width=650;texture.height=Math.round(650*rug.lengthCm/rug.widthCm);texture.getContext('2d').drawImage(image,x*image.width,y*image.height,w*image.width,h*image.height,0,0,texture.width,texture.height);$('rug-photo').src=rug.image;$('rug-photo').alt=rug.alt;$('rug-title').textContent=rug.title;$('rug-facts').textContent=`${rug.material} - ${rug.widthCm} x ${rug.lengthCm} cm (catalog)`;sync();render();say('Ready. Add photos of your home.');}catch(_){say('The rug image could not load. Check your connection and reload.');}}
+function triangle(ctx,src,dst){const[s0,s1,s2]=src,[d0,d1,d2]=dst,ux=s1[0]-s0[0],uy=s1[1]-s0[1],vx=s2[0]-s0[0],vy=s2[1]-s0[1],det=ux*vy-vx*uy,ax=d1[0]-d0[0],ay=d1[1]-d0[1],bx=d2[0]-d0[0],by=d2[1]-d0[1],a=(ax*vy-bx*uy)/det,b=(ay*vy-by*uy)/det,c=(bx*ux-ax*vx)/det,d=(by*ux-ay*vx)/det;ctx.save();ctx.beginPath();const cx=dst.reduce((n,p)=>n+p[0],0)/3,cy=dst.reduce((n,p)=>n+p[1],0)/3;dst.forEach((p,i)=>{const dx=p[0]-cx,dy=p[1]-cy,k=1+.65/Math.max(1,Math.hypot(dx,dy)),q=[cx+dx*k,cy+dy*k];i?ctx.lineTo(...q):ctx.moveTo(...q);});ctx.closePath();ctx.clip();ctx.setTransform(a,b,c,d,d0[0]-a*s0[0]-c*s0[1],d0[1]-b*s0[0]-d*s0[1]);ctx.drawImage(texture,0,0);ctx.restore();}
+function paint(target,r,handles=false,original=false,watermark=false){if(!r.photo)return;target.width=r.photo.width;target.height=r.photo.height;const ctx=target.getContext('2d');ctx.drawImage(r.photo,0,0);
+ if(texture&&!original){const map=G.projector(r.corners.map(p=>[p[0]*target.width,p[1]*target.height])),n=16,layer=document.createElement('canvas');layer.width=target.width;layer.height=target.height;const lc=layer.getContext('2d');
+ for(let j=0;j<n;j++)for(let i=0;i<n;i++){const uv=[[i/n,j/n],[(i+1)/n,j/n],[(i+1)/n,(j+1)/n],[i/n,(j+1)/n]],src=uv.map(p=>[p[0]*texture.width,p[1]*texture.height]),dst=uv.map(p=>map(...p));triangle(lc,[src[0],src[1],src[2]],[dst[0],dst[1],dst[2]]);triangle(lc,[src[0],src[2],src[3]],[dst[0],dst[2],dst[3]]);}ctx.globalAlpha=r.opacity;ctx.drawImage(layer,0,0);ctx.globalAlpha=1;
+ if(handles){const radius=Math.max(10,target.width/75);ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.beginPath();r.corners.forEach((p,i)=>i?ctx.lineTo(p[0]*target.width,p[1]*target.height):ctx.moveTo(p[0]*target.width,p[1]*target.height));ctx.closePath();ctx.stroke();r.corners.forEach((p,i)=>{const x=p[0]*target.width,y=p[1]*target.height;ctx.fillStyle='#24372f';ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fill();ctx.stroke();ctx.fillStyle='white';ctx.font=`bold ${radius}px system-ui`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),x,y);});}}
+ if(watermark){const h=Math.max(30,target.height*.045);ctx.fillStyle='#24372fe6';ctx.fillRect(0,target.height-h,target.width,h);ctx.fillStyle='white';ctx.font=`${Math.max(12,h*.34)}px system-ui`;ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText(`${r.name} - Manual rug preview - not to scale`,12,target.height-h/2,target.width-24);}}
+function render(){const r=rooms[active];canvas.hidden=!r.photo;$('empty').hidden=!!r.photo;if(r.photo)paint(canvas,r,true,before);rooms.forEach((s,i)=>{const card=$('comparison-'+i),c=card.querySelector('canvas'),p=card.querySelector('.placeholder');c.hidden=!s.photo;p.hidden=!!s.photo;if(s.photo)paint(c,s);card.querySelector('strong').textContent=s.name;card.classList.toggle('chosen',favorite===i);const b=card.querySelector('button');b.disabled=!s.photo;b.textContent=favorite===i?'Selected favourite':'Choose favourite';b.setAttribute('aria-pressed',String(favorite===i));});$('download-all').disabled=!texture||rooms.filter(s=>s.photo).length<2;}
+function accept(points){if(!G.valid(points)){say('Keep all four corners inside the photo without crossing them.');return false;}rooms[active].corners=points;render();return true;}
+function nudge(dx,dy){const r=rooms[active];if(!r.photo||!texture||before)return;const points=r.corners.map(p=>[...p]),t=$('target').value;points.forEach((p,i)=>{if(t==='all'||Number(t)===i){p[0]+=dx;p[1]+=dy;}});if(accept(points)){r.size=100;r.angle=0;sync();}}
+function point(e){const b=canvas.getBoundingClientRect();return[(e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height];}
+canvas.addEventListener('pointerdown',e=>{const r=rooms[active];if(!texture||before||!r.photo)return;const p=point(e),b=canvas.getBoundingClientRect();let corner=r.corners.findIndex(q=>Math.hypot((q[0]-p[0])*b.width,(q[1]-p[1])*b.height)<22);if(corner<0){const ctx=canvas.getContext('2d');ctx.beginPath();r.corners.forEach((q,i)=>i?ctx.lineTo(q[0]*canvas.width,q[1]*canvas.height):ctx.moveTo(q[0]*canvas.width,q[1]*canvas.height));ctx.closePath();if(!ctx.isPointInPath(p[0]*canvas.width,p[1]*canvas.height))return;}drag={start:p,corners:r.corners.map(q=>[...q]),corner};$('target').value=corner<0?'all':String(corner);canvas.setPointerCapture(e.pointerId);canvas.focus();e.preventDefault();});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;const p=point(e),dx=p[0]-drag.start[0],dy=p[1]-drag.start[1],pts=drag.corners.map((q,i)=>drag.corner<0||i===drag.corner?[q[0]+dx,q[1]+dy]:[...q]);if(accept(pts)){rooms[active].size=100;rooms[active].angle=0;sync();}});
+for(const type of['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(type,()=>{drag=null;});
+canvas.addEventListener('keydown',e=>{const moves={ArrowUp:[0,-.005],ArrowDown:[0,.005],ArrowLeft:[-.005,0],ArrowRight:[.005,0]};if(moves[e.key]){e.preventDefault();nudge(...moves[e.key].map(n=>n*(e.shiftKey?4:1)));}});
+for(let i=0;i<rooms.length;i++){const slot=node('article',null,'slot');slot.id='slot-'+i;const top=node('div',null,'slot-top'),edit=node('button',rooms[i].name,'edit'),remove=node('button','Remove','remove');edit.onclick=()=>select(i);remove.onclick=()=>{rooms[i].token++;rooms[i].photo=null;favorite=favorite===i?null:favorite;slot.querySelector('input').value='';select(i);say('Photo removed from this session.');};top.append(edit,remove);const label=node('label','Choose room photo','upload'),input=node('input');input.type='file';input.accept='image/jpeg,image/png,image/webp';input.setAttribute('aria-label',`Upload photo for space ${i+1}`);input.onchange=()=>loadPhoto(input.files[0],i);label.append(input);slot.append(top,node('p','No photo yet','file-info'),label);$('slots').append(slot);const card=node('article',null,'compare-card');card.id='comparison-'+i;const c=node('canvas'),placeholder=node('p',`Add photo ${i+1}`,'placeholder'),actions=node('div',null,'compare-actions'),b=node('button','Choose favourite');c.setAttribute('aria-label',`Composite preview for space ${i+1}`);b.onclick=()=>{favorite=favorite===i?null:i;render();};actions.append(node('strong',rooms[i].name),b);card.append(c,placeholder,actions);$('comparisons').append(card);}
+$('rug-select').replaceChildren(...window.RUGS.map(r=>{const o=node('option',`${r.id.toUpperCase()} - ${r.title}`);o.value=r.id;return o;}));$('rug-select').onchange=e=>{rug=window.RUGS.find(r=>r.id===e.target.value);loadRug();};
+$('space-name').oninput=e=>{rooms[active].name=e.target.value||`Space ${active+1}`;$('active-name').textContent=rooms[active].name;$('slot-'+active).querySelector('.edit').textContent=`${String(active+1).padStart(2,'0')} / ${rooms[active].name}`;render();};
+for(const id of['size','angle'])$(id).oninput=e=>{const r=rooms[active],v=Number(e.target.value),points=G.transform(r.corners,r.photo.width,r.photo.height,id==='size'?v/r.size:1,id==='angle'?v-r.angle:0);if(accept(points))r[id]=v;sync();};
+$('opacity').oninput=e=>{rooms[active].opacity=Number(e.target.value)/100;sync();render();};document.querySelectorAll('[data-move]').forEach(b=>b.onclick=()=>nudge(...b.dataset.move.split(',').map(n=>Number(n)*.01)));
+$('reset').onclick=()=>{defaults(rooms[active]);select(active);say('Placement reset for this space.');};$('before').onclick=()=>{before=!before;$('before').textContent=before?'Show rug':'Show original';$('before').setAttribute('aria-pressed',String(before));render();};
+function download(c,name){c.toBlob(blob=>{if(!blob){say('Could not export the image. Please try again.');return;}const url=URL.createObjectURL(blob),a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('PNG downloaded. Your room photo was not uploaded.');},'image/png');}
+$('download').onclick=()=>{const c=document.createElement('canvas');paint(c,rooms[active],false,false,true);download(c,`rug-${rug.id}-space-${active+1}.png`);};
+$('download-all').onclick=()=>{const loaded=rooms.filter(r=>r.photo),c=document.createElement('canvas');c.width=600*loaded.length;c.height=520;const ctx=c.getContext('2d');ctx.fillStyle='#f4f0e8';ctx.fillRect(0,0,c.width,c.height);loaded.forEach((r,i)=>{const temp=document.createElement('canvas');paint(temp,r);const scale=Math.min(560/temp.width,410/temp.height),w=temp.width*scale,h=temp.height*scale;ctx.drawImage(temp,i*600+(600-w)/2,55+(410-h)/2,w,h);ctx.fillStyle='#24372f';ctx.font='20px Georgia';ctx.fillText(`${favorite===rooms.indexOf(r)?'Favourite: ':''}${r.name}`,i*600+20,32,560);});ctx.font='14px system-ui';ctx.fillText('One Rug, Three Spaces - Manual previews - not to scale',20,500);download(c,`rug-${rug.id}-comparison.png`);};
+sync();render();loadRug();

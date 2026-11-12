@@ -1,13 +1,4 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert'),path=require('path');
-const root=path.resolve(__dirname,'..');const context={window:{}};
-vm.runInNewContext(fs.readFileSync(path.join(root,'data.js'),'utf8'),context);
-const rugs=context.window.RUGS;assert(Array.isArray(rugs)&&rugs.length);
-const ids=new Set();for(const r of rugs){assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(r.id)&&!ids.has(r.id));ids.add(r.id);
-for(const k of ['title','alt','image','material','sourceId'])assert(typeof r[k]==='string'&&r[k].length,k);
-assert(r.widthCm>0&&r.lengthCm>0);assert(fs.existsSync(path.join(root,r.image)));assert(r.spaces.length>=3);const sid=new Set();
-for(const s of r.spaces){assert(/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s.id)&&!sid.has(s.id));sid.add(s.id);
-for(const k of ['name','mood','description','placement','caution'])assert(typeof s[k]==='string'&&s[k].length,k);
-assert(s.palette.length===3&&s.palette.every(c=>c.name&&/^#[A-Fa-f0-9]{6}$/.test(c.hex)));assert(s.furniture.length===3);assert([s.room.width,s.room.depth].every(n=>n>=2&&n<=8));}}
-const html=fs.readFileSync(path.join(root,'index.html'),'utf8');for(const m of html.matchAll(/(?:src|href)="([^"#]+)"/g)){if(!/^https?:/.test(m[1]))assert(fs.existsSync(path.join(root,m[1])),`Missing ${m[1]}`);}
-assert(fs.existsSync(path.join(root,'AGENTS.md')));console.log(`PASS: ${rugs.length} rug(s), ${rugs.reduce((n,r)=>n+r.spaces.length,0)} complete concepts; local references and data contracts valid.`);
-
+const root=path.resolve(__dirname,'..'),ctx={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'data.js'),'utf8'),ctx);assert(Number.isInteger(ctx.window.SPACE_COUNT)&&ctx.window.SPACE_COUNT>=3);const ids=new Set();for(const r of ctx.window.RUGS){assert(!ids.has(r.id)&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(r.id));ids.add(r.id);for(const k of['title','image','alt','sourceId','material'])assert(typeof r[k]==='string'&&r[k].length);assert(r.widthCm>0&&r.lengthCm>0);const[x,y,w,h]=r.crop;assert(x>=0&&y>=0&&w>0&&h>0&&x+w<=1&&y+h<=1);assert(fs.existsSync(path.join(root,r.image)));}
+const g=require('../geometry.js'),p=[[.2,.2],[.8,.2],[.9,.8],[.1,.8]];assert(g.valid(p));assert(!g.valid([p[0],p[2],p[1],p[3]]));assert(!g.valid([[0,0],[0,0],[0,0],[0,0]]));assert(!g.valid(g.transform(p,1200,800,1,0,1,0)));const project=g.projector(p);[[0,0],[1,0],[1,1],[0,1]].forEach((uv,i)=>project(...uv).forEach((n,j)=>assert(Math.abs(n-p[i][j])<1e-10)));const rotated=g.transform(p,1200,800,1,90),back=g.transform(rotated,1200,800,1,-90);back.forEach((q,i)=>q.forEach((n,j)=>assert(Math.abs(n-p[i][j])<1e-10)));
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');for(const m of html.matchAll(/(?:src|href)="([^"#]+)"/g))if(!/^https?:/.test(m[1]))assert(fs.existsSync(path.join(root,m[1])),m[1]);const app=fs.readFileSync(path.join(root,'app.js'),'utf8');assert(!/\b(fetch|XMLHttpRequest|localStorage|indexedDB)\b/.test(app));console.log('PASS: catalog, resource links, convexity, crossed/outside corners, homography corner mapping, rotation round-trip, and no upload/storage APIs.');

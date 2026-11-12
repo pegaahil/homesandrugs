@@ -2,105 +2,15 @@
   "id": "replace-rug-id",
   "title": "REPLACE with catalog title",
   "image": "assets/replace-rug-id.jpg",
-  "alt": "REPLACE with a factual image description",
-  "material": "REPLACE with catalog material",
+  "alt": "REPLACE with factual image description",
+  "material": "REPLACE with sourced material",
   "widthCm": 130,
   "lengthCm": 200,
   "sourceId": "REPLACE with registered source ID",
-  "spaces": [
-    {
-      "id": "space-1",
-      "name": "REPLACE with concept name",
-      "mood": "REPLACE with mood",
-      "description": "REPLACE with styling rationale",
-      "palette": [
-        {
-          "name": "Warm ivory",
-          "hex": "#E9E1D1"
-        },
-        {
-          "name": "Muted teal",
-          "hex": "#527B7B"
-        },
-        {
-          "name": "Walnut",
-          "hex": "#70513E"
-        }
-      ],
-      "furniture": [
-        "REPLACE suggestion 1",
-        "REPLACE suggestion 2",
-        "REPLACE suggestion 3"
-      ],
-      "placement": "REPLACE with placement suggestion",
-      "caution": "REPLACE with relevant limitation",
-      "room": {
-        "width": 4,
-        "depth": 4.5
-      }
-    },
-    {
-      "id": "space-2",
-      "name": "REPLACE with concept name",
-      "mood": "REPLACE with mood",
-      "description": "REPLACE with styling rationale",
-      "palette": [
-        {
-          "name": "Chalk",
-          "hex": "#E8E5DB"
-        },
-        {
-          "name": "Moss",
-          "hex": "#687452"
-        },
-        {
-          "name": "Oak",
-          "hex": "#B18A62"
-        }
-      ],
-      "furniture": [
-        "REPLACE suggestion 1",
-        "REPLACE suggestion 2",
-        "REPLACE suggestion 3"
-      ],
-      "placement": "REPLACE with placement suggestion",
-      "caution": "REPLACE with relevant limitation",
-      "room": {
-        "width": 3,
-        "depth": 3.8
-      }
-    },
-    {
-      "id": "space-3",
-      "name": "REPLACE with concept name",
-      "mood": "REPLACE with mood",
-      "description": "REPLACE with styling rationale",
-      "palette": [
-        {
-          "name": "Warm stone",
-          "hex": "#D8CFBE"
-        },
-        {
-          "name": "Deep ink",
-          "hex": "#303C43"
-        },
-        {
-          "name": "Soft brass",
-          "hex": "#AB8950"
-        }
-      ],
-      "furniture": [
-        "REPLACE suggestion 1",
-        "REPLACE suggestion 2",
-        "REPLACE suggestion 3"
-      ],
-      "placement": "REPLACE with placement suggestion",
-      "caution": "REPLACE with relevant limitation",
-      "room": {
-        "width": 3.8,
-        "depth": 4.8
-      }
-    }
+  "crop": [
+    0,
+    0,
+    1,
+    1
   ]
 }
-

@@ -1,47 +1,46 @@
-# One Rug, Three Spaces — development handbook
+# One Rug, Three Spaces — project handbook (v2)
 
-## Purpose and boundaries
-Build a public, English-language interior styling explorer using one owner-supplied rug photograph in three hypothetical spaces. Help visitors compare palettes, furniture suggestions and placement. This is a static educational website, not an interior-design certification or a shopping service.
+## Purpose
+Build an English-language, browser-local rug placement tool. Visitors load three photos of their own home, position the same rug in each, and compare the composites. The default rug is owner-provided No. 42. This is manual visual experimentation, not a measured installation plan or automatic photorealistic rendering.
 
-Keep this project separate from The Rug Detective: no motif identification, historical symbolism, provenance inference, RAG, fictional stories or live LLM calls. AI assists development; the deployed app uses deterministic JavaScript.
+Keep it distinct from The Rug Detective: no motif recognition, RAG, historical attribution, symbolism or stories. AI assists development, not runtime image processing.
 
-## Read before changing files
-Read this file, README.md, data.js and docs/sources.md. Inspect existing components before adding new ones. Preserve user edits. Never change catalog facts to make a layout fit. Do not introduce frameworks, packages, analytics, accounts or API keys without a concrete requirement.
+## Read first
+Read this handbook, README.md, data.js and docs/sources.md before changing code. Preserve user edits. Use plain HTML, CSS, JavaScript and Canvas; no framework, external API, analytics, accounts or build step is needed. Do not add such dependencies without a new requirement.
 
-## Repository structure
-- index.html: semantic page shell and shared interactive sections.
-- styles.css: shared design tokens, responsive layouts and print styles.
-- data.js: window.RUGS array; the single source of truth for rugs and space concepts.
-- app.js: rendering, filtering, favorites, palette copying, comparison, room scale and export.
-- assets/: owner-provided images named using lowercase hyphenated IDs (no42.jpg).
-- docs/sources.md: source, rights and uncertainty register.
-- docs/decisions.md: actual design revisions and validation record.
-- templates/rug-template.json: reusable record structure; placeholders must be replaced before publication.
-- scripts/check.cjs: dependency-free data and local-reference checks.
-- AGENTS.md: this authoritative development handbook.
+## Files and naming
+- index.html: accessible page shell, upload slots, editor and comparison.
+- styles.css: shared responsive styling and design tokens.
+- data.js: window.RUGS and window.SPACE_COUNT; reusable catalog configuration.
+- geometry.js: pure corner validation, transformations and projective mapping; also importable by Node tests.
+- app.js: per-photo state, local file loading, Canvas compositing, pointer/keyboard controls and PNG export.
+- assets/: permitted catalog images, lowercase kebab-case filenames.
+- templates/rug-template.json: reusable rug metadata format.
+- scripts/check.cjs: data, geometry and relative-resource checks.
+- docs/sources.md: catalog/image attribution and limitations.
+- docs/decisions.md: actual design changes and tests, never imagined results.
 
-## Design system
-Use warm ivory (#f4f0e8), ink (#24372f), muted olive (#6b7254), restrained rust (#a24f36) and fine beige borders. Use system sans-serif for interface labels and Georgia for editorial headings. Keep the rug image dominant, generous whitespace, rounded controls and visible keyboard focus. Do not add stock or generated room photos that imply a real installation. Floor-plan diagrams must say they are schematic. At widths below 760px stack columns; never force horizontal page scrolling. Respect reduced-motion preferences. Use actual buttons with accessible names and pressed/expanded states where applicable.
+## Visual and interaction rules
+Use warm ivory #f4f0e8, ink #24372f, muted olive #6b7254, rust #a24f36 and thin beige borders. Georgia headings and system-sans interface text. Preserve generous spacing, a large editing canvas, visible focus rings and responsive stacking below 760px. All controls need accessible labels. Give keyboard alternatives to pointer dragging: select whole rug or a corner and use arrow keys / nudge buttons. Announce errors and completed exports through a status region.
 
-## Content contract
-Each rug requires id, title, image, alt, material, widthCm, lengthCm, sourceId and at least three spaces. IDs must be unique lowercase kebab-case. Dimensions are positive centimeters. Source each fact in docs/sources.md; label owner catalog claims as such.
+## Privacy and safe file handling
+House photos are sensitive user content. Never upload, log, commit, store in localStorage/IndexedDB, send to analytics, or fetch them remotely. Keep them in memory only and explain that refresh clears the session. Revoke temporary object URLs after decoding. Accept JPEG, PNG and WebP only, maximum 20 MB; reject undecodable files with a readable error. Resize decoded photos to at most 1600 pixels on the longest side; reject images over 40 megapixels. No external image URLs. Do not publish user room photos as test fixtures or evidence without specific permission. Synthetic testing rooms must be clearly labelled as test illustrations.
 
-Each space requires id, name, mood, description, palette (three named #RRGGBB colors), furniture (three suggestions), placement, caution and room (width and depth in meters). Example room sizes are assumptions, not measurements of the user's home. Use the same format and level of detail for each space. Palettes are manually selected styling suggestions, not extracted or color-calibrated measurements.
+## State and geometry contract
+Generate SPACE_COUNT independent records (default 3). Each holds its own photo, label, four normalized corners in clockwise order, opacity and loading token. Switching slots preserves edits. A later upload must supersede an earlier pending decode. Clearing or replacing a photo resets only that slot. Use validated convex, non-self-intersecting quadrilaterals inside the photo; reject collapsed or inverted corners. Rotation/scale operates in image pixel coordinates to avoid stretching caused by photo aspect ratio. Perspective controls and dragging update the same corner model used by the comparison and exports.
 
-Never invent origin, age, artisan, value, durability, safety certifications or cultural meanings. Do not offer installation or conservation guarantees. For a silk rug, recommend verifying suitability and care with the owner or a qualified specialist; avoid claiming that all placements are suitable. Unknown facts remain unknown. Text must distinguish catalog facts, styling judgment and hypothetical dimensions.
+Render the rug using a projective mapping approximated by a fine triangle mesh. Do not claim physical scale from a single uncalibrated photograph. Expose manual four-corner adjustment, movement, resizing, rotation, opacity, reset and before/after. Explain that the rug is drawn above furniture: no automatic occlusion, shadows or light reconstruction.
 
-## Adding a rug or space
-1. Obtain a permitted photo and confirmed catalog facts. Register their sources and rights.
-2. Copy templates/rug-template.json, replace placeholders, choose unique IDs, and add the complete object to window.RUGS in data.js.
-3. Add three complete space records for a new rug. For an extra space, append one record to the existing spaces array. Do not duplicate the HTML page or add index-specific rendering branches.
-4. All selectors, comparison rows and export must read the data dynamically. Preserve favorite keys as rugId:spaceId. Use textContent or escaped text for new content; never render untrusted HTML.
-5. Run node scripts/check.cjs and node --check app.js. Open the page and test the new selection, compare mode, favorite, palette copy and export.
-6. Check mobile layout, keyboard access, readable colors, actual photo loading, room-size validation and printed output. Document actual observations in docs/decisions.md.
-7. Update README and sources only where affected. Summarize changed behavior and verification honestly; never call an unrun test passed.
+## Catalog contract and extensions
+Each window.RUGS entry requires unique lowercase kebab-case id, title, image, alt, material, positive widthCm/lengthCm, sourceId and crop. crop is [x,y,width,height], normalized inside the source image, explicitly documented in sources. Never infer origin, age, value or durability. Catalog dimensions are informational; do not label the preview as true scale.
 
-## Layout calculations and interactions
-Use catalog width/length for the rug rectangle and entered room width/depth for the room plane. Reject nonfinite or out-of-range inputs (2–8 m). Rotation swaps rug dimensions. Show an explicit warning if a rug does not fit. Furniture labels are schematic and not scaled installation drawings. Never stretch the rug image to change its catalog ratio. Switching rugs/spaces resets dimensions to the selected concept's defaults; favorites persist locally where storage is available. Storage/clipboard failures must have a graceful status message. Do not store personal data.
+To add a rug: copy templates/rug-template.json, replace all placeholders with sourced facts, register image rights and crop in docs/sources.md, add the image and record, run checks, then test rendering and export. The selector is generated from data. To add another room slot: change SPACE_COUNT and verify upload, state isolation, comparison and export; do not duplicate HTML or hard-code three canvases. New controls must operate on the shared active-slot model.
 
-## Definition of done
-At least one real rug with three complete concepts; operational selector, comparison, palette action, favorite, room inputs, rotation and export; no broken relative resources; responsive and keyboard-usable interface; source and concept labels visible; no runtime external services or secrets. GitHub Pages must serve the same files that were tested. Verify the published page before claiming publication. Submission must include repository URL, live URL, this handbook and an explanation of extending the project. AI evidence must be authentic and clearly distinguish recorded development from imagined conversations.
+## Export and content rules
+Export real rendered PNGs at the resized photo resolution, without editor handles. Label outputs as manual previews, not to scale. Comparison export must use current independent slot states and clear slot labels. Disable export and editing until a photo and rug have loaded. Never silently substitute a fabricated room or fake successful upload. Keep image sources same-origin so Canvas export works on GitHub Pages.
 
+## Validation and release
+Run node scripts/check.cjs, node --check app.js and node --check geometry.js. In a real browser test three local uploads, replacement, invalid formats, independent edits, dragging, all transform controls, keyboard nudging, before/after, reset, removal, selected and comparison downloads. Inspect desktop/mobile rendering. Verify exported pixels, not just a success toast. Document tests actually run and known limits. Deploy to the existing public pegaahil/homesandrugs GitHub repository and GitHub Pages; verify the live page after deployment. Never include personal room uploads in the repository.
+
+## Academic submission
+Explain the project, link the repository and live page, provide this handbook, and explain how its schema and shared renderer permit new rugs/spaces. Include authentic AI assistance evidence and the student's own explanation. Do not fabricate conversation screenshots or claim unperformed tests passed.

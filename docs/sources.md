@@ -7,9 +7,8 @@
 - Photograph: owner-provided image reused from the user's existing rug project, assets/no42.jpg. Used for the user's requested educational website. No public-domain or Creative Commons status is claimed.
 - The catalog PDF is not republished. Origin, age, maker attribution, symbolism and the catalog's legend are outside this site's scope.
 
-## Styling concepts
-- Three palettes and room concepts are AI-assisted editorial design suggestions reviewed during development.
-- Palette HEX values were manually selected; they are not measured dye colours or automated image-extraction results.
-- Room sizes are hypothetical adjustable defaults. Furniture markers are schematic, not scaled furniture plans.
-- No external historical, statistical or conservation claims are relied upon. Site visitors should verify real-world fit and silk-rug care with an appropriate specialist.
-
+## Local photo previews (v2)
+- Room photos are supplied by the visitor and held in browser memory only. They are not published with the source or sent to any service.
+- The No. 42 texture uses normalized source crop [0.04, 0.067, 0.92, 0.88], removing most white photo margins and fringe. The original catalog image remains unchanged.
+- Preview perspective is manually adjusted, not inferred. Physical size, occlusion, illumination and conservation suitability cannot be determined from this tool.
+- Synthetic room diagrams used for testing are labelled as test illustrations. They are not photos of a real home and are not shipped as default room images.

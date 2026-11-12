@@ -1,29 +1,31 @@
-# One Rug, Three Spaces
+# One Rug, Three Spaces (v2)
 
-A static styling explorer by Pegah Iloukhani. One owner-provided silk rug is presented in three hypothetical spaces: a quiet living room, a study and an intimate gallery.
+Try the same rug in three photographs of your home. This revision replaces the earlier palette-only styling explorer with a manual photo-compositing tool.
 
-## Run
-Open index.html directly, or run `python -m http.server 8780` in this folder and visit http://localhost:8780. No build, install, API key or account is required. Clipboard access depends on browser permissions; the HEX value is always displayed as a fallback.
+Live site: https://pegaahil.github.io/homesandrugs/
 
-## Features
-Select a space; compare all concepts; copy a palette colour; save a favorite locally; adjust a hypothetical room's width/depth; rotate the scaled rug; download a concept as text; print. All content is in data.js and rendered by shared components.
+## Use
+1. Choose one JPEG, PNG or WebP for each room slot (up to 20 MB each).
+2. Select a slot. Drag the rug, or drag its four numbered corners to match the floor perspective.
+3. Adjust size, rotation and opacity. Use the target selector with arrow keys or nudge buttons for precise whole-rug or corner movement.
+4. Compare original / composite, reset placement, or rename the space.
+5. Compare all loaded rooms, choose a favourite, and download individual or side-by-side PNGs.
+
+Photos remain in memory in your browser. They are not uploaded or saved. Refresh clears the session. Images are resized to at most 1600px on the longest edge; images above 40 megapixels are rejected. At least two loaded rooms are required for a comparison export.
+
+## Limits
+This is an uncalibrated manual preview, not true physical scale. Rug catalog dimensions are informational. There is no automatic floor detection, furniture occlusion, lighting or shadow generation. The catalog photo is cropped to the rug body to remove most white margins and fringe. Downloads are labelled as manual previews.
+
+## Run and check
+Run `python -m http.server 8780` in this folder, then visit http://localhost:8780. No dependencies, API key, account or build step.
+
+Run `node scripts/check.cjs`, `node --check app.js`, and `node --check geometry.js`. Browser checks are recorded in docs/decisions.md.
 
 ## Extend
-Read AGENTS.md first. Use templates/rug-template.json and register source and image permissions in docs/sources.md. A new space is one additional complete object in a rug's spaces array. A new rug is another complete object in window.RUGS. The shared UI discovers the records automatically. Never duplicate a page just to add another concept.
+Read AGENTS.md first. Add a catalog record using templates/rug-template.json and register its permitted image and facts in docs/sources.md. The rug selector is data-driven. Change window.SPACE_COUNT to add more independent room slots without duplicating HTML or rendering code. Each slot shares the same geometry and rendering pipeline.
 
-## Validate
-`node scripts/check.cjs`
+## Publication
+GitHub Pages serves main / root. Keep .nojekyll so Markdown files remain accessible. Never commit user room photos or credentials. Source code and the owner-provided catalog image are public; visitors' uploaded room photos are not.
 
-`node --check app.js`
-
-Then check desktop/mobile layouts, all controls and the actual deployed URL. See docs/decisions.md for the validation record.
-
-## Publish on GitHub Pages
-Upload the complete contents of this folder to the repository root. In Settings → Pages, deploy from main / (root). All URLs are relative, so repository subpaths are supported. Do not upload API keys or the owner's complete catalog PDF. The site needs only the permitted photo and recorded catalog facts.
-
-## Distinct from the final project
-The Rug Detective investigates motifs and generates explicitly fictional stories with retrieval and review. This project demonstrates reusable development instructions and interior styling content. It has no motif analysis, RAG or runtime AI calls.
-
-## AI assistance and rights
-AI assisted with architecture, copy, code and testing. The owner must review the content before academic submission. No model-generated room photography is used. The supplied rug photo is used for this owner-requested educational project; no open license for third-party reuse is asserted. Source and qualification notes are in docs/sources.md.
-
+## Academic distinction
+The Rug Detective concerns motifs and fictional stories. This project concerns interactive spatial visualization and reusable AGENTS.md development rules. AI assisted development; the running application uses browser JavaScript and Canvas, not a runtime LLM.
