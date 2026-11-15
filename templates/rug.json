@@ -1,1 +1,22 @@
-{"id":"no99","title":"Rug No. 99","image":"assets/no99.jpg","material":"REPLACE_WITH_VERIFIED_MATERIAL","widthCm":100,"lengthCm":150,"shape":"rectangle","pattern":"dense","palette":["#ffffff","#000000","#aa7755"],"source":"REPLACE_WITH_SOURCE_FILENAME_AND_PAGES"}
+{
+  "id": "no99",
+  "title": "Rug No. 99",
+  "image": "assets/no99.jpg",
+  "material": "REPLACE_WITH_VERIFIED_MATERIAL",
+  "widthCm": 100,
+  "lengthCm": 150,
+  "shape": "rectangle",
+  "pattern": "dense",
+  "palette": [
+    "#ffffff",
+    "#000000",
+    "#aa7755"
+  ],
+  "source": "REPLACE_WITH_SOURCE_FILENAME_AND_PAGES",
+  "crop": [
+    0,
+    0,
+    1,
+    1
+  ]
+}
