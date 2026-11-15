@@ -36,3 +36,6 @@ Run node scripts/check.cjs and syntax checks. Tests cover exact palette outranki
 
 ## Academic evidence
 Submission must include required title, repository, live URL, this handbook and how a new catalog entry generates a page/card without rewriting the app. Include authentic AI prompt/response evidence and the student's own reviewed explanation. Do not fabricate conversations, scores or test screenshots.
+
+## Cache/versioning
+Version the CSS and JavaScript URLs in index.html when changing the application contract, so a returning visitor does not load the old placement app from browser/CDN cache. Relative-resource checks strip the query string.
