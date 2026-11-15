@@ -1,14 +1,15 @@
-# Source and rights register
+# Source register
 
-## owner-catalog-42
-- Source: owner-supplied `No.42 silk carpet 130X200cm.pdf`, catalog facts recorded in the existing project data/no42.json, citing page 2.
-- Facts used: No. 42; title Song of Enchanted Birds; silk; 130 × 200 cm.
-- These are owner-catalog statements, not independently verified certification.
-- Photograph: owner-provided image reused from the user's existing rug project, assets/no42.jpg. Used for the user's requested educational website. No public-domain or Creative Commons status is claimed.
-- The catalog PDF is not republished. Origin, age, maker attribution, symbolism and the catalog's legend are outside this site's scope.
+All five images and product dimensions/material come from the user's Arsham Imperial catalogs. Images are used for the user's requested educational catalog website; no public-domain or Creative Commons status is claimed. Do not redistribute entire catalog PDFs. No prices, availability, provenance or historical assertions are inferred.
 
-## Local photo previews (v2)
-- Room photos are supplied by the visitor and held in browser memory only. They are not published with the source or sent to any service.
-- The No. 42 texture uses normalized source crop [0.04, 0.067, 0.92, 0.88], removing most white photo margins and fringe. The original catalog image remains unchanged.
-- Preview perspective is manually adjusted, not inferred. Physical size, occlusion, illumination and conservation suitability cannot be determined from this tool.
-- Synthetic room diagrams used for testing are labelled as test illustrations. They are not photos of a real home and are not shipped as default room images.
+| ID | Owner-provided document | Photo page | Specification page |
+| --- | --- | --- | --- |
+| no38 | No.38silk carpet 100X150cm.pdf | 1 | 2 |
+| no41 | No.41 silk carpet 140X210cm.pdf | 2 | 2 |
+| no42 | No.42 silk carpet 130X200cm.pdf | 1 | 2 |
+| no48 | NO.48 silk carpet 200X300cm.pdf | 1 | 2 |
+| no6 | No.6 silk carpet300X400cm.pdf | 1 | 2 |
+
+Photo assets are extracted embedded images, resized for the web; images were visually reviewed. Material: silk, per catalog. Dimensions: 100x150, 140x210, 130x200, 200x300 and 300x400 cm respectively. Shapes are visually annotated; No.48 is oval. Catalog product names are simplified to neutral numeric labels. Palettes and pattern density labels are manually chosen visual annotations, not measured textile colours. No.38 and No.48 have relatively open fields; the other three have dense overall motifs. These comparisons are relative to this small collection.
+
+The built-in room sample is an original Canvas illustration explicitly labelled as a demo, not a photograph or an actual customer's room. Visitors' photos stay in browser memory and are not part of the repository or exported shortlist.
