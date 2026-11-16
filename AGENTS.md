@@ -8,7 +8,7 @@ Read README.md, catalog.js, matching.js and docs/sources.md first. Preserve unre
 
 ## Structure
 - index.html: upload, room palette correction, preferences, recommendations, catalog and comparison.
-- styles.css: shared ivory/forest/rust palette, serif headings, responsive cards and visible focus.
+- styles.css: shared warm-white/parchment/gold/brick palette, serif headings, responsive cards and visible focus.
 - catalog.js: window.RUG_CATALOG array; all product content lives here.
 - matching.js: pure extraction/ranking functions with Node exports; shared by browser and tests.
 - app.js: local photo decoding, palette sampling, reason-first cards, final-two selection and text export.
@@ -32,7 +32,7 @@ Color accounts for 80 points; stated pattern preference for 20. If pattern is An
 Keep photo pixels in memory, no fetch/analytics/storage/network upload. Accept JPEG/PNG/WebP <=20 MB and <=40 MP; decode safely, resize to max1600px, revoke object URLs and discard superseded loads. Reject unsupported/corrupt input without silently using a fabricated photo. Include a labelled synthetic demonstration for testing. Reset must remove room data and choices. Preferences update ranked cards immediately. Each result shows actual score components and relevant catalog facts. Keep comparison capped at two rugs; filters removing a selected item clear that selection. Export a text shortlist with settings, colors, scores and limitations, not raw photo data. Use textContent for user-controlled text.
 
 ## Visual/accessibility rules
-Use #f5f1e9 ivory, #213c34 forest, #a9573b rust. Large editorial heading, clear numbered workflow, ample whitespace, room photo beside controls, rug imagery prominent. All inputs have labels, keyboard alternatives exist for sampling (color inputs), status is announced, mobile has no page overflow. Never embed a room as if it belongs to the user.
+Use white content panels, #f5ecdf parchment, #30291f ink, #987548 antique gold and #ad3f32 brick actions. Large editorial heading, clear numbered workflow, ample whitespace, room photo beside controls, rug imagery prominent. All inputs have labels, keyboard alternatives exist for sampling (color inputs), status is announced, mobile has no page overflow. Never embed a room as if it belongs to the user.
 
 ## Evaluation and release
 Run node scripts/check.cjs and syntax checks. Tests cover exact palette outranking unrelated palette, contrast preference changing ranking, rotated size fits, exclusion and no matches. Browser test sample and local upload, corrupt file, correction, preferences, two-rug room comparison, size no-match, reset, export and narrow viewport. Record only actual results in docs/testing.md. A failed test must not be reported as passed. Verify the deployed page.
@@ -51,3 +51,6 @@ Use one validated normalized floor quadrilateral per room. Preserve it while swi
 Support whole-rug drag, corner drag, size/rotation, target-based keyboard/nudge controls and reset. Reject crossed/out-of-bounds corners. New room/reset clears placement, choices and originals. Async image loads must not overwrite the active rug or a newly cleared room. Texture failures must disable affected exports and show an error. Original mode disables manual placement edits. Export labelled PNGs without handles; comparison export always contains both chosen rug previews, even when the original-view toggle is active, with a visible not-to-scale disclosure.
 
 Two options maximum. A third choice must show feedback without replacing an existing choice. Re-ranking/filtering removes selections no longer in the top three. Desktop shows both room composites; mobile shows labelled A/B tabs with the active option visibly indicated. Opening the full catalog is optional. Test shared placement through switching, single and comparison export, oval masking, reset, no-match state, asynchronous loads, desktop and mobile. Source image rights/privacy rules still apply.
+
+## Atelier presentation
+Keep the reference-inspired visual direction: restrained serif typography, warm white and parchment sections, gold dividers, square brick-red buttons, generous spacing and a catalog-photo hero. Use only authorized catalog assets. Do not copy another brand name, logo, claims, product facts or imagery. Preserve the upload/discover/try/compare workflow and all accessibility/privacy behavior. Hero and catalog must reflow on mobile without horizontal overflow.
