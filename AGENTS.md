@@ -54,3 +54,11 @@ Two options maximum. A third choice must show feedback without replacing an exis
 
 ## Atelier presentation
 Keep the reference-inspired visual direction: restrained serif typography, warm white and parchment sections, gold dividers, square brick-red buttons, generous spacing and a catalog-photo hero. Use only authorized catalog assets. Do not copy another brand name, logo, claims, product facts or imagery. Preserve the upload/discover/try/compare workflow and all accessibility/privacy behavior. Hero and catalog must reflow on mobile without horizontal overflow.
+
+## Acceptance checklist for future additions
+1. Add the authorized image under assets/ with a lowercase catalog ID filename.
+2. Fill templates/rug.json with verified dimensions/material, source, editorial colours/pattern and normalized crop; register the record in catalog.js. Do not leave example values.
+3. Confirm the catalog card and eligible recommendation appear through the shared rendering logic, without a new hard-coded HTML card or per-rug conditional.
+4. Open its manual preview, change size/rotation and corners, and switch to another rug. Confirm the placement is preserved.
+5. Select two rugs and verify both room composites, the mobile A/B switch and an actual downloaded PNG. A visible download button alone is not a successful export test.
+6. Run automated checks and report passed, failed and untested cases separately. Record browser automation timeouts as inconclusive unless an application failure is independently confirmed.
