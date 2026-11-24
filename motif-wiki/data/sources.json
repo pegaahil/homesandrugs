@@ -1,0 +1,252 @@
+[
+  {
+    "id": "S01",
+    "citation": "Ittig, Annette. “CARPETS iv. Knotted-pile carpets: Designs, motifs, and patterns.” Encyclopaedia Iranica IV/8 (1990), 845–850. Updated 2017.",
+    "url": "https://www.iranicaonline.org/articles/carpets-iv/",
+    "type": "Specialist reference",
+    "accessed": "2026-11-24",
+    "credibility": "Named specialist, terminology and bibliography.",
+    "limitations": "Historical overview; nomenclature varies. Its Ardabil date differs from the current V&A record; do not copy that date.",
+    "excerpts": [
+      {
+        "id": "S01-E1",
+        "text": "Field is enclosed by main and minor border stripes, separated by narrow guards. Motif, pattern and overall design are different levels.",
+        "locator": "Designs; opening terminology"
+      },
+      {
+        "id": "S01-E2",
+        "text": "Herati combines a rosette, diamond, palmettes and four curved leaves. Mahi refers to the leaves’ fish-like appearance, not necessarily literal fish.",
+        "locator": "Patterns, item 1: Herati"
+      },
+      {
+        "id": "S01-E3",
+        "text": "Arabesque uses vegetal scrolling and divided leaves. Palmettes are stylized fan-like flowers.",
+        "locator": "Motifs, items 3 and 5"
+      },
+      {
+        "id": "S01-E4",
+        "text": "Shah Abbasi can name a repeat of floral elements, palmettes and cloud bands. It is not a secure date or maker attribution.",
+        "locator": "Patterns: Shah Abbasi"
+      },
+      {
+        "id": "S01-E5",
+        "text": "Medallion-and-corner design combines a central toranj with corner portions. Terminology is not uniform.",
+        "locator": "Designs, item 1"
+      }
+    ],
+    "supported_pages": [
+      "boteh",
+      "herati",
+      "shah-abbasi",
+      "islimi",
+      "toranj-lachak",
+      "structure"
+    ]
+  },
+  {
+    "id": "S02",
+    "citation": "Getty Research Institute. Art & Architecture Thesaurus, “boteh,” ID 300249869. Undated online record.",
+    "url": "https://www.getty.edu/vow/AATFullDisplay?find=fire&logic=null&note=light&subjectid=300249869",
+    "type": "Specialist controlled vocabulary",
+    "accessed": "2026-11-24",
+    "credibility": "Institutional vocabulary with bibliographic sources.",
+    "limitations": "A definition, not evidence of a particular weaver’s beliefs or a universal symbol.",
+    "excerpts": [
+      {
+        "id": "S02-E1",
+        "text": "Boteh is a Persian leaf- or shrub-derived decorative form resembling a pear or teardrop, found in carpets and other textiles. The record relates European paisley to boteh.",
+        "locator": "AAT scope note, ID 300249869"
+      }
+    ],
+    "supported_pages": [
+      "boteh"
+    ]
+  },
+  {
+    "id": "S03",
+    "citation": "The Metropolitan Museum of Art. “Floral Arabesque Carpet,” 17th century, probably Iran. Rogers Fund, 1969, accession 69.244.",
+    "url": "https://www.metmuseum.org/art/collection/search/452066",
+    "type": "Museum object record",
+    "accessed": "2026-11-24",
+    "credibility": "Collection attribution, material record and open image.",
+    "limitations": "Preserve “probably Iran”; the record discusses earlier Iran/India attributions. This one object does not define all arabesques.",
+    "excerpts": [
+      {
+        "id": "S03-E1",
+        "text": "The museum attributes this carpet to probably Iran and records wool pile with cotton foundation. Blue arabesque bands share the field with smaller floral elements.",
+        "locator": "Introductory description and Artwork Details"
+      },
+      {
+        "id": "S03-E2",
+        "text": "The public-domain image shows broad blue curving bands and smaller red-ground flowers. These observable shapes do not identify the intention of the weaver.",
+        "locator": "Public-domain front image and introductory description"
+      }
+    ],
+    "supported_pages": [
+      "islimi"
+    ]
+  },
+  {
+    "id": "S04",
+    "citation": "Victoria and Albert Museum. “The Ardabil Carpet.” Updated 24 September 2026. Museum no. 272-1893.",
+    "url": "https://www.vam.ac.uk/articles/the-ardabil-carpet",
+    "type": "Museum educational essay",
+    "accessed": "2026-11-24",
+    "credibility": "Museum explanation of its own object, inscription and display.",
+    "limitations": "Origins are described with uncertainty. Lamp explanations are proposals, not established intentions. Images are copyrighted and are linked, not embedded.",
+    "excerpts": [
+      {
+        "id": "S04-E1",
+        "text": "The V&A dates the carpet to 1539–1540 from its inscription. A central medallion is accompanied by four corner portions.",
+        "locator": "Inscription and design paragraphs"
+      },
+      {
+        "id": "S04-E2",
+        "text": "The V&A discusses perspective and deliberate imperfection as possible explanations for unequal lamps, while questioning the perspective evidence. The page does not identify individual proponents.",
+        "locator": "Paragraphs on unequal lamps"
+      },
+      {
+        "id": "S04-E3",
+        "text": "Its dense wool pile supports detailed design. The museum limits illumination to help preserve the colours.",
+        "locator": "Pile density and display-lighting paragraphs"
+      }
+    ],
+    "supported_pages": [
+      "toranj-lachak",
+      "value"
+    ]
+  },
+  {
+    "id": "S05",
+    "citation": "Dhamija, Jasleen. “CARPETS ii. Raw materials and dyes.” Encyclopaedia Iranica IV/8 (1990), 839–843. Updated 2017.",
+    "url": "https://www.iranicaonline.org/articles/carpets-ii/",
+    "type": "Specialist reference",
+    "accessed": "2026-11-24",
+    "credibility": "Named textile specialist, historical references.",
+    "limitations": "Regional and historical discussion; not a grading system or a laboratory identification of our examples.",
+    "excerpts": [
+      {
+        "id": "S05-E1",
+        "text": "Wool, silk and other fibres have different uses in carpets. Natural and synthetic dyes both occur in the history of Persian weaving. Fibre or dye identity must be documented, not guessed from a screen.",
+        "locator": "Fibers and their preparation; opening dye discussion"
+      }
+    ],
+    "supported_pages": [
+      "value"
+    ]
+  },
+  {
+    "id": "S06",
+    "citation": "Ittig, Annette. “CARPETS iii. Knotted-pile carpets: Techniques and structures.” Encyclopaedia Iranica IV/8 (1990), 843–845. Updated 2017.",
+    "url": "https://www.iranicaonline.org/articles/carpets-iii/",
+    "type": "Specialist reference",
+    "accessed": "2026-11-24",
+    "credibility": "Describes construction and measurement conventions.",
+    "limitations": "Technical description is not a price formula. Regional linear raj measures are not directly interchangeable with knots per unit area.",
+    "excerpts": [
+      {
+        "id": "S06-E1",
+        "text": "Warp runs lengthwise and weft across it. Cut knot ends form pile. Knot density needs an explicit measurement unit.",
+        "locator": "Technique; density measurement paragraphs"
+      },
+      {
+        "id": "S06-E2",
+        "text": "Symmetrical and asymmetrical knots occur across political and ethnic boundaries. A knot’s conventional name is not proof of origin.",
+        "locator": "Paragraph on problematic Turkish/Persian knot terminology"
+      }
+    ],
+    "supported_pages": [
+      "structure",
+      "value"
+    ]
+  },
+  {
+    "id": "S07",
+    "citation": "Cleveland Museum of Art. “Carpet Fragment,” accession 1988.243, Gift of Milton Girod. Object record and full conservation statement.",
+    "url": "https://www.clevelandart.org/print/art/1988.243",
+    "type": "Museum record and conservation report",
+    "accessed": "2026-11-24",
+    "credibility": "Reports 2019 scientific work and cites the 2021 forensic study.",
+    "limitations": "Current record says Iran, Rayy. Natural versus synthetic indigo remains unresolved. Provenance includes question marks.",
+    "excerpts": [
+      {
+        "id": "S07-E1",
+        "text": "The conservation statement dates the fragment to 1884–1928, following dye analysis. Congo Red provides a late nineteenth-century boundary. This revises older claims of great antiquity.",
+        "locator": "Full conservation statement, Dye analysis"
+      },
+      {
+        "id": "S07-E2",
+        "text": "The museum could not determine whether the indigo was natural or synthetic. The object is silk knotted pile, with palmettes and a central medallion.",
+        "locator": "Dye analysis and Description"
+      },
+      {
+        "id": "S07-E3",
+        "text": "Its ownership history contains uncertain dates and a questioned transfer. Such uncertainty should remain visible in a provenance summary.",
+        "locator": "Provenance list"
+      }
+    ],
+    "supported_pages": [
+      "value"
+    ]
+  },
+  {
+    "id": "S08",
+    "citation": "The Metropolitan Museum of Art. “Fragment of a Northwest Persian Medallion Carpet,” early 16th century, Northwestern Iran. James F. Ballard Collection, 1922, accession 22.100.67.",
+    "url": "https://www.metmuseum.org/art/collection/search/447525",
+    "type": "Museum object record",
+    "accessed": "2026-11-24",
+    "credibility": "Museum attribution and material description with public-domain image.",
+    "limitations": "Fragment, not a complete carpet. Original position is a curatorial reconstruction stated as likely.",
+    "excerpts": [
+      {
+        "id": "S08-E1",
+        "text": "The museum identifies this as an early sixteenth-century Northwest Iranian fragment. It probably occupied a pendant area above a larger medallion. Cotton warp and wool weft/pile are recorded.",
+        "locator": "Introductory description and Artwork Details"
+      }
+    ],
+    "supported_pages": [
+      "value"
+    ]
+  },
+  {
+    "id": "S09",
+    "citation": "Royal Collection Trust. “Carpet,” Persia, RCIN 60610. Online collection record.",
+    "url": "https://www.rct.uk/collection/60610/carpet",
+    "type": "Museum collection catalogue",
+    "accessed": "2026-11-24",
+    "credibility": "Institutional terminology for a specific Persian carpet, verified through the public indexed record.",
+    "limitations": "Full-page retrieval failed during this run. Only the visible indexed description was ingested; no image or unverified date is reused.",
+    "excerpts": [
+      {
+        "id": "S09-E1",
+        "text": "The catalogue describes Shah Abbas palmettes together with islimi vines in a Persian Isfahan carpet. The terms can coexist within one composition.",
+        "locator": "Public indexed Description excerpt, accessed 2026-11-24"
+      }
+    ],
+    "supported_pages": [
+      "shah-abbasi",
+      "islimi"
+    ]
+  },
+  {
+    "id": "S10",
+    "citation": "Ittig, Annette. “CARPETS xi. Qajar Period.” Encyclopaedia Iranica IV/8 (1990), 877–883. Updated 2017.",
+    "url": "https://www.iranicaonline.org/articles/carpets-xi/",
+    "type": "Specialist historical reference",
+    "accessed": "2026-11-24",
+    "credibility": "Named specialist with documented production history.",
+    "limitations": "Historical associations are not authentication of an unknown rug.",
+    "excerpts": [
+      {
+        "id": "S10-E1",
+        "text": "Qajar production reused medallion-and-corner and floral designs associated with earlier periods. Herati appears in the discussion of Farahan production. Continued use prevents dating a rug by the design name alone.",
+        "locator": "Discussion of designs and regional production"
+      }
+    ],
+    "supported_pages": [
+      "herati",
+      "toranj-lachak",
+      "structure"
+    ]
+  }
+]

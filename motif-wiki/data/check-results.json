@@ -1,0 +1,71 @@
+{
+  "run_at": "2026-11-24T13:32:18.937136+08:00",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Internal links and fragments",
+      "status": "passed",
+      "detail": "516 local references inspected",
+      "errors": []
+    },
+    {
+      "name": "Unique HTML IDs",
+      "status": "passed",
+      "detail": "24 HTML pages inspected",
+      "errors": []
+    },
+    {
+      "name": "Evidence coverage",
+      "status": "passed",
+      "detail": "31 labelled claims; 20 evidence notes",
+      "errors": []
+    },
+    {
+      "name": "Source minimum",
+      "status": "passed",
+      "detail": "10 sources, including one explicitly limited indexed record",
+      "errors": []
+    },
+    {
+      "name": "Slide count and Wiki mapping",
+      "status": "passed",
+      "detail": "18 slides: 15 teaching + 3 appendix",
+      "errors": []
+    },
+    {
+      "name": "Image files and alt text",
+      "status": "passed",
+      "detail": "Embedded images use local files with nonempty alt text",
+      "errors": []
+    },
+    {
+      "name": "JPEG content signature",
+      "status": "passed",
+      "detail": "Added after browser testing found HTML error responses saved as JPG",
+      "errors": []
+    },
+    {
+      "name": "No checkmark or cross-mark glyphs",
+      "status": "passed",
+      "detail": "HTML text scanned",
+      "errors": []
+    },
+    {
+      "name": "Museum permission metadata",
+      "status": "passed",
+      "detail": "Both Met API records explicitly isPublicDomain=true; source pages also reviewed",
+      "errors": []
+    },
+    {
+      "name": "Chinese language and review disclosure",
+      "status": "passed",
+      "detail": "Traditional Chinese page language and review limit included",
+      "errors": []
+    }
+  ],
+  "limits": [
+    "Not an art-history accuracy certification",
+    "Does not replace human Chinese review",
+    "Browser interaction results recorded separately"
+  ]
+}

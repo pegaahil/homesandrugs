@@ -1,0 +1,24 @@
+[
+  {
+    "id": "I01",
+    "file": "assets/met-452066.jpg",
+    "title": "Floral Arabesque Carpet",
+    "museum": "The Metropolitan Museum of Art",
+    "number": "69.244",
+    "licence": "Public Domain / Met Open Access",
+    "source": "https://www.metmuseum.org/art/collection/search/452066",
+    "credit": "Rogers Fund, 1969",
+    "alt": "Full carpet with a red field, blue scrolling bands and a blue floral border."
+  },
+  {
+    "id": "I02",
+    "file": "assets/met-447525.jpg",
+    "title": "Fragment of a Northwest Persian Medallion Carpet",
+    "museum": "The Metropolitan Museum of Art",
+    "number": "22.100.67",
+    "licence": "Public Domain / Met Open Access",
+    "source": "https://www.metmuseum.org/art/collection/search/447525",
+    "credit": "James F. Ballard Collection, Gift of James F. Ballard, 1922",
+    "alt": "Irregular light-ground carpet fragment with floral decoration and a dark central pendant form."
+  }
+]
