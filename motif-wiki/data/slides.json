@@ -6,7 +6,10 @@
     "wiki": "index",
     "evidence": [],
     "visual": "<figure><img class=\"art\" src=\"assets/met-447525.jpg\" alt=\"Irregular light-ground carpet fragment with floral decoration and a dark central pendant form.\"><figcaption>Fragment of a Northwest Persian Medallion Carpet. The Metropolitan Museum of Art · 22.100.67. James F. Ballard Collection, Gift of James F. Ballard, 1922. Public Domain / Met Open Access. <a href=\"images.html#I02\">Credit / 圖片來源</a></figcaption></figure>",
-    "note": "給初學者的入門課。繁體中文及術語暫譯尚未經人工專業審閱。"
+    "note": "給初學者的入門課。繁體中文及術語暫譯尚未經人工專業審閱。",
+    "title_en": "Reading Persian rug motifs",
+    "body_en": "<p>Start with form, ask about context, and keep uncertainty visible.</p><p>Persian Rug Motifs: Forms, Context, and Meanings.</p><p>Five topics and a method for tracing information to its sources.</p>",
+    "note_en": "An introductory lesson. Traditional Chinese translations and descriptive terms have not been reviewed by a human specialist."
   },
   {
     "number": 2,
@@ -15,7 +18,10 @@
     "wiki": "workflow",
     "evidence": [],
     "visual": "",
-    "note": "這四類是本專案的編輯規則，不是地毯本身的分類。"
+    "note": "這四類是本專案的編輯規則，不是地毯本身的分類。",
+    "title_en": "Observe before interpreting",
+    "body_en": "<p>Observation: describe visible shapes.</p><p>Historical claim: check records for dates, materials and origin.</p><p>Interpretation: identify who proposed it and the supporting evidence.</p><p>Uncertain: do not draw a conclusion when evidence is insufficient.</p>",
+    "note_en": "These four categories are this project’s editorial rules, not classifications of rugs."
   },
   {
     "number": 3,
@@ -26,7 +32,10 @@
       "S01-E1"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified structure teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><rect x=\"20\" y=\"10\" width=\"260\" height=\"310\" fill=\"#913e32\"/><rect x=\"30\" y=\"20\" width=\"240\" height=\"290\" fill=\"#d8b56f\"/><rect x=\"42\" y=\"32\" width=\"216\" height=\"266\" fill=\"#496762\"/><rect x=\"72\" y=\"62\" width=\"156\" height=\"206\" fill=\"#d8b56f\"/><rect x=\"82\" y=\"72\" width=\"136\" height=\"186\" fill=\"#fff9ef\"/><text x=\"150\" y=\"155\" text-anchor=\"middle\">Field / 地心</text><text x=\"150\" y=\"184\" text-anchor=\"middle\">matn / متن</text><text x=\"150\" y=\"52\" text-anchor=\"middle\" style=\"fill:white;font-size:13px\">Main border / 主邊框</text></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": ""
+    "note": "",
+    "title_en": "Find the field and borders",
+    "body_en": "<p>The field (matn / متن) is the main area inside the borders.</p><p>Main borders, minor borders and narrow guard bands help locate a motif.</p><p>Describe where it is before describing what it resembles.</p>",
+    "note_en": ""
   },
   {
     "number": 4,
@@ -37,7 +46,10 @@
       "S01-E1"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified toranj-lachak teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><rect x=\"45\" y=\"20\" width=\"210\" height=\"290\" fill=\"#e8dfcf\" stroke=\"#a07736\" stroke-width=\"10\"/><path d=\"M150 90L202 165 150 240 98 165Z M52 28L102 28 52 78Z M248 28L198 28 248 78Z M52 302L102 302 52 252Z M248 302L198 302 248 252Z\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": "本課的五個主題屬於不同層次，不能全部當作單一符號。"
+    "note": "本課的五個主題屬於不同層次，不能全部當作單一符號。",
+    "title_en": "Motif, pattern and composition",
+    "body_en": "<p>Motif: one decorative unit.</p><p>Pattern: the arrangement and repetition of units.</p><p>Composition: the organization of the whole rug.</p>",
+    "note_en": "The five topics operate at different levels. They are not all single symbols."
   },
   {
     "number": 5,
@@ -48,7 +60,10 @@
       "S02-E1"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified boteh teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M125 290 C35 285 55 160 120 130 C160 108 198 72 173 35 C250 90 188 150 200 210 C214 267 180 300 125 290Z\" fill=\"#913e32\"/><path d=\"M119 260 Q85 200 158 151\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": ""
+    "note": "",
+    "title_en": "Boteh: a curved-tip teardrop",
+    "body_en": "<p>Persian: بته‌جقه (boteh-jegheh).</p><p>Look for a rounded outline and a curved tip.</p><p>Getty connects this form with paisley. Recognizing a shape does not establish the weaver’s intended meaning.</p>",
+    "note_en": ""
   },
   {
     "number": 6,
@@ -59,7 +74,10 @@
       "S01-E2"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified herati teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 70L240 160 150 250 60 160Z\" fill=\"none\" stroke=\"#a07736\" stroke-width=\"5\"/><circle cx=\"150\" cy=\"160\" r=\"22\" fill=\"#913e32\"/><g fill=\"#496762\"><path d=\"M72 82Q130 20 210 60Q130 42 72 82Z\"/><path d=\"M230 80Q292 130 250 220Q268 130 230 80Z\"/><path d=\"M220 240Q170 300 80 260Q170 280 220 240Z\"/><path d=\"M70 240Q8 190 50 100Q32 190 70 240Z\"/></g><g fill=\"#913e32\"><circle cx=\"150\" cy=\"70\" r=\"10\"/><circle cx=\"240\" cy=\"160\" r=\"10\"/><circle cx=\"150\" cy=\"250\" r=\"10\"/><circle cx=\"60\" cy=\"160\" r=\"10\"/></g></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": ""
+    "note": "",
+    "title_en": "Herati / Mahi: read the whole repeat",
+    "body_en": "<p>هراتی / ماهی‌درهم (herāti / māhi darham).</p><p>Look for the combination of a diamond, central flower and surrounding curved leaves.</p><p>The “fish” name relates to the appearance of the leaves. It does not require a realistic fish image.</p>",
+    "note_en": ""
   },
   {
     "number": 7,
@@ -71,7 +89,10 @@
       "S09-E1"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified shah-abbasi teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 275C45 245 35 175 74 170C20 110 80 85 105 110C90 25 145 35 150 70C160 30 212 35 196 110C230 75 275 120 230 170C270 178 250 245 150 275Z\" fill=\"#913e32\"/><path d=\"M150 260V95M150 250L90 145M150 250L210 145\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": ""
+    "note": "",
+    "title_en": "Shah Abbasi: more than one naming level",
+    "body_en": "<p>شاه‌عباسی (shāh-abbāsi).</p><p>A palmette is a stylized fan-like flower.</p><p>Shah Abbasi can also name a broader floral pattern. The name alone does not establish a date.</p>",
+    "note_en": ""
   },
   {
     "number": 8,
@@ -83,7 +104,10 @@
       "S03-E2"
     ],
     "visual": "<figure><img class=\"art\" src=\"assets/met-452066.jpg\" alt=\"Full carpet with a red field, blue scrolling bands and a blue floral border.\"><figcaption>Floral Arabesque Carpet. The Metropolitan Museum of Art · 69.244. Rogers Fund, 1969. Public Domain / Met Open Access. <a href=\"images.html#I01\">Credit / 圖片來源</a></figcaption></figure>",
-    "note": ""
+    "note": "",
+    "title_en": "Islimi: follow the scroll",
+    "body_en": "<p>اسلیمی (eslimi / islimi), arabesque.</p><p>Follow branches and curves rather than concentrating on one flower.</p><p>In the museum example, blue scrolling bands coexist with small flowers. The museum labels its origin “probably Iran.”</p>",
+    "note_en": ""
   },
   {
     "number": 9,
@@ -95,19 +119,25 @@
       "S04-E1"
     ],
     "visual": "<div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified toranj-lachak teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><rect x=\"45\" y=\"20\" width=\"210\" height=\"290\" fill=\"#e8dfcf\" stroke=\"#a07736\" stroke-width=\"10\"/><path d=\"M150 90L202 165 150 240 98 165Z M52 28L102 28 52 78Z M248 28L198 28 248 78Z M52 302L102 302 52 252Z M248 302L198 302 248 252Z\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div>",
-    "note": ""
+    "note": "",
+    "title_en": "Toranj and Lachak: centre and corners",
+    "body_en": "<p>ترنج و لچک (toranj va lachak).</p><p>Identify the central medallion, then examine how the corners echo it.</p><p>A medallion can itself contain smaller motifs.</p>",
+    "note_en": ""
   },
   {
     "number": 10,
     "title": "練習：你在辨認哪個層次？",
-    "body": "<p>哪一個重點是整組重複？哪一個重點是中心與四角？</p><div class=\"compare\"><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified boteh teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M125 290 C35 285 55 160 120 130 C160 108 198 72 173 35 C250 90 188 150 200 210 C214 267 180 300 125 290Z\" fill=\"#913e32\"/><path d=\"M119 260 Q85 200 158 151\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Boteh</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified herati teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 70L240 160 150 250 60 160Z\" fill=\"none\" stroke=\"#a07736\" stroke-width=\"5\"/><circle cx=\"150\" cy=\"160\" r=\"22\" fill=\"#913e32\"/><g fill=\"#496762\"><path d=\"M72 82Q130 20 210 60Q130 42 72 82Z\"/><path d=\"M230 80Q292 130 250 220Q268 130 230 80Z\"/><path d=\"M220 240Q170 300 80 260Q170 280 220 240Z\"/><path d=\"M70 240Q8 190 50 100Q32 190 70 240Z\"/></g><g fill=\"#913e32\"><circle cx=\"150\" cy=\"70\" r=\"10\"/><circle cx=\"240\" cy=\"160\" r=\"10\"/><circle cx=\"150\" cy=\"250\" r=\"10\"/><circle cx=\"60\" cy=\"160\" r=\"10\"/></g></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Herati</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified shah-abbasi teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 275C45 245 35 175 74 170C20 110 80 85 105 110C90 25 145 35 150 70C160 30 212 35 196 110C230 75 275 120 230 170C270 178 250 245 150 275Z\" fill=\"#913e32\"/><path d=\"M150 260V95M150 250L90 145M150 250L210 145\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Palmette</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified islimi teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M40 280C260 290 280 100 160 100C60 100 75 220 145 210C230 200 160 40 260 35\" fill=\"none\" stroke=\"#496762\" stroke-width=\"12\"/><path d=\"M135 235Q80 245 72 190Q115 200 135 235M200 140Q245 130 245 80Q210 92 200 140\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Islimi</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified toranj-lachak teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><rect x=\"45\" y=\"20\" width=\"210\" height=\"290\" fill=\"#e8dfcf\" stroke=\"#a07736\" stroke-width=\"10\"/><path d=\"M150 90L202 165 150 240 98 165Z M52 28L102 28 52 78Z M248 28L198 28 248 78Z M52 302L102 302 52 252Z M248 302L198 302 248 252Z\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Toranj / Lachak</p></div></div><details><summary>顯示答案</summary><p>Herati 要看整組重複。Toranj / Lachak 要看中心與角隅。單一局部裁切可能缺少判讀所需的關係。</p></details>",
+    "body": "<p>哪一個重點是整組重複？哪一個重點是中心與四角？</p><details><summary>顯示答案</summary><p>Herati 要看整組重複。Toranj / Lachak 要看中心與角隅。單一局部裁切可能缺少判讀所需的關係。</p></details>",
     "wiki": "glossary",
     "evidence": [
       "S01-E2",
       "S01-E5"
     ],
-    "visual": "",
-    "note": ""
+    "visual": "<div class=\"compare\"><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified boteh teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M125 290 C35 285 55 160 120 130 C160 108 198 72 173 35 C250 90 188 150 200 210 C214 267 180 300 125 290Z\" fill=\"#913e32\"/><path d=\"M119 260 Q85 200 158 151\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Boteh</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified herati teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 70L240 160 150 250 60 160Z\" fill=\"none\" stroke=\"#a07736\" stroke-width=\"5\"/><circle cx=\"150\" cy=\"160\" r=\"22\" fill=\"#913e32\"/><g fill=\"#496762\"><path d=\"M72 82Q130 20 210 60Q130 42 72 82Z\"/><path d=\"M230 80Q292 130 250 220Q268 130 230 80Z\"/><path d=\"M220 240Q170 300 80 260Q170 280 220 240Z\"/><path d=\"M70 240Q8 190 50 100Q32 190 70 240Z\"/></g><g fill=\"#913e32\"><circle cx=\"150\" cy=\"70\" r=\"10\"/><circle cx=\"240\" cy=\"160\" r=\"10\"/><circle cx=\"150\" cy=\"250\" r=\"10\"/><circle cx=\"60\" cy=\"160\" r=\"10\"/></g></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Herati</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified shah-abbasi teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M150 275C45 245 35 175 74 170C20 110 80 85 105 110C90 25 145 35 150 70C160 30 212 35 196 110C230 75 275 120 230 170C270 178 250 245 150 275Z\" fill=\"#913e32\"/><path d=\"M150 260V95M150 250L90 145M150 250L210 145\" fill=\"none\" stroke=\"#d8b56f\" stroke-width=\"4\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Palmette</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified islimi teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><path d=\"M40 280C260 290 280 100 160 100C60 100 75 220 145 210C230 200 160 40 260 35\" fill=\"none\" stroke=\"#496762\" stroke-width=\"12\"/><path d=\"M135 235Q80 245 72 190Q115 200 135 235M200 140Q245 130 245 80Q210 92 200 140\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Islimi</p></div><div><div class=\"diagram\"><svg role=\"img\" aria-label=\"Simplified toranj-lachak teaching diagram, not a museum object\" viewBox=\"0 0 300 330\"><rect x=\"45\" y=\"20\" width=\"210\" height=\"290\" fill=\"#e8dfcf\" stroke=\"#a07736\" stroke-width=\"10\"/><path d=\"M150 90L202 165 150 240 98 165Z M52 28L102 28 52 78Z M248 28L198 28 248 78Z M52 302L102 302 52 252Z M248 302L198 302 248 252Z\" fill=\"#913e32\"/></svg><div class=\"caption\">Original teaching schematic / 原創教學示意圖<br>Not a historical object or an identification template.</div></div><p>Toranj / Lachak</p></div></div>",
+    "note": "",
+    "title_en": "Exercise: which level are you identifying?",
+    "body_en": "<p>Which topic concerns an entire repeating unit? Which concerns the centre and corners?</p><details><summary>Show answer</summary><p>Herati requires reading the whole repeat. Toranj / Lachak concerns the centre and corners. A small crop may omit the relationships needed for identification.</p></details>",
+    "note_en": ""
   },
   {
     "number": 11,
@@ -118,7 +148,10 @@
       "S04-E2"
     ],
     "visual": "",
-    "note": "本 Wiki 不把任何紋樣解讀成唯一、普遍的寓意，也不加入虛構故事。"
+    "note": "本 Wiki 不把任何紋樣解讀成唯一、普遍的寓意，也不加入虛構故事。",
+    "title_en": "Historical context is not a fixed meaning",
+    "body_en": "<p>The V&A discusses perspective and deliberate imperfection as possible explanations for the Ardabil Carpet’s unequal lamps.</p><p>It also questions the evidence for perspective and does not name the individual proponents.</p><p>Say “the museum presents an interpretation,” rather than claiming certainty about the weaver’s intention.</p>",
+    "note_en": "This Wiki assigns no universal meaning to a motif and contains no fictional stories."
   },
   {
     "number": 12,
@@ -131,7 +164,10 @@
       "S04-E3"
     ],
     "visual": "",
-    "note": "這是理解與紀錄的框架，不是估價或購買建議。"
+    "note": "這是理解與紀錄的框架，不是估價或購買建議。",
+    "title_en": "Understanding materials, density and dyes",
+    "body_en": "<p>Materials: record the pile and foundation separately.</p><p>Knot density: state the measurement unit. Do not convert it directly into a price.</p><p>Dyes: consult documentation or analysis. Screen colour cannot prove chemical composition.</p>",
+    "note_en": "This is a framework for understanding and documentation, not an appraisal or buying recommendation."
   },
   {
     "number": 13,
@@ -144,7 +180,10 @@
       "S08-E1"
     ],
     "visual": "",
-    "note": "紋樣本身不能決定價值。外觀古老也不等於年代已獲證明。"
+    "note": "紋樣本身不能決定價值。外觀古老也不等於年代已獲證明。",
+    "title_en": "Condition, age and provenance",
+    "body_en": "<p>Condition: are losses, repairs and examination reports documented?</p><p>Age: is it supported by an inscription or analysis? Dye analysis led Cleveland to date one fragment to 1884–1928.</p><p>Provenance: who owned it? Keep uncertain transfers and dates visible.</p>",
+    "note_en": "A motif alone does not determine value. An old-looking appearance does not establish age."
   },
   {
     "number": 14,
@@ -155,7 +194,10 @@
       "S08-E1"
     ],
     "visual": "<figure><img class=\"art\" src=\"assets/met-447525.jpg\" alt=\"Irregular light-ground carpet fragment with floral decoration and a dark central pendant form.\"><figcaption>Fragment of a Northwest Persian Medallion Carpet. The Metropolitan Museum of Art · 22.100.67. James F. Ballard Collection, Gift of James F. Ballard, 1922. Public Domain / Met Open Access. <a href=\"images.html#I02\">Credit / 圖片來源</a></figcaption></figure>",
-    "note": ""
+    "note": "",
+    "title_en": "Exercise: read a museum object",
+    "body_en": "<p>Met 22.100.67: examine the fragment, then read the museum description.</p><p>What can you see? Which information requires a record?</p><details><summary>Show evidence layers</summary><p>Observation: an incomplete outline and decoration. Museum record: early sixteenth century, Northwestern Iran. Reconstruction: probably above a larger central medallion. The fragment cannot establish the full design or the weaver’s intention.</p></details>",
+    "note_en": ""
   },
   {
     "number": 15,
@@ -164,7 +206,10 @@
     "wiki": "index",
     "evidence": [],
     "visual": "",
-    "note": "下一步可以比較新的館藏，但新主張必須先進入 Wiki 並完成查核。"
+    "note": "下一步可以比較新的館藏，但新主張必須先進入 Wiki 並完成查核。",
+    "title_en": "Take away three habits",
+    "body_en": "<p>Describe form and layout first.</p><p>Consult traceable sources next.</p><p>Finally, explain what remains unknown.</p><p><a href=\"index.html\">English Wiki</a> · <a href=\"glossary.html\">Glossary</a> · <a href=\"sources.html\">Source notes</a></p>",
+    "note_en": "You can compare another museum object next, but new claims must first enter the Wiki and be checked."
   },
   {
     "number": 16,
@@ -173,7 +218,10 @@
     "wiki": "workflow",
     "evidence": [],
     "visual": "",
-    "note": "同一主張三次修訂仍無法支持，就標記未解決並交由人工檢查。"
+    "note": "同一主張三次修訂仍無法支持，就標記未解決並交由人工檢查。",
+    "title_en": "Appendix 1: from sources to slides",
+    "body_en": "<p>Acquire public sources; create evidence notes; organize a linked Wiki; check claims and image rights; approve the outline; translate and lay out slides; test the HTML.</p><p>Insufficient citation returns to sources. Unclear terminology returns to the Wiki. Layout or link failures are repaired and retested.</p>",
+    "note_en": "After three unsuccessful revisions of a claim, mark it unresolved and refer it for human review."
   },
   {
     "number": 17,
@@ -182,7 +230,10 @@
     "wiki": "checking-log",
     "evidence": [],
     "visual": "",
-    "note": "紀錄只描述這次真正遇到的問題，不虛構測試數字。"
+    "note": "紀錄只描述這次真正遇到的問題，不虛構測試數字。",
+    "title_en": "Appendix 2: this run’s checking record",
+    "body_en": "<p>Image screening: rejected an Egyptian Mamluk carpet as a Persian example.</p><p>Date comparison: found different Ardabil dates in an older reference and the V&A record. Used the current holding museum’s record and retained the discrepancy.</p><p>Public access is not permission to reuse: V&A images became external links.</p><p><a href=\"checking-log.html\">Read the actual log and test results</a></p>",
+    "note_en": "The log records actual problems from this run, not invented test statistics."
   },
   {
     "number": 18,
@@ -191,6 +242,9 @@
     "wiki": "checking-log",
     "evidence": [],
     "visual": "",
-    "note": "未來 Rug Detective 可重用證據 ID，但影像辨認仍需人工確認，故事必須另標為虛構。"
+    "note": "未來 Rug Detective 可重用證據 ID，但影像辨認仍需人工確認，故事必須另標為虛構。",
+    "title_en": "Appendix 3: reflection and next steps",
+    "body_en": "<p>The source-to-claim step needed the most editorial attention: origin, date and careful wording.</p><p>Cultural attribution, rights and qualifiers such as “probably” are now checked before layout.</p><p>One run cannot establish which node fails most often over time. Traditional Chinese still needs human review.</p>",
+    "note_en": "A future Rug Detective can reuse evidence IDs. Motif identification still needs human confirmation, and stories must be labelled fiction."
   }
 ]

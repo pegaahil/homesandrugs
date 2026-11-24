@@ -1,6 +1,6 @@
 # Persian Rug Motifs
 
-English linked LLM-assisted Wiki and Traditional Chinese 18-slide HTML lesson. Open index.html or presentation.html. No install, secret or live API required.
+English linked LLM-assisted Wiki and Traditional Chinese and English 18-slide HTML lesson. Open index.html or presentation.html. No install, secret or live API required.
 
 Build: `python scripts/build.py`
 Check: `python scripts/check.py`

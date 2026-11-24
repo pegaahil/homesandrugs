@@ -1,11 +1,11 @@
 {
-  "run_at": "2026-11-24T13:32:18.937136+08:00",
+  "run_at": "2026-11-24T13:46:27.743589+08:00",
   "status": "passed",
   "checks": [
     {
       "name": "Internal links and fragments",
       "status": "passed",
-      "detail": "516 local references inspected",
+      "detail": "520 local references inspected",
       "errors": []
     },
     {
@@ -30,6 +30,12 @@
       "name": "Slide count and Wiki mapping",
       "status": "passed",
       "detail": "18 slides: 15 teaching + 3 appendix",
+      "errors": []
+    },
+    {
+      "name": "Bilingual slide coverage",
+      "status": "passed",
+      "detail": "All 18 slides require English title/body and translated caveats alongside Traditional Chinese",
       "errors": []
     },
     {

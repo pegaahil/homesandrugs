@@ -32,6 +32,7 @@ claims=[c for p in wiki for sec in p['sections'] for c in sec['claims']]
 check('Evidence coverage',[c['text'] for c in claims if not c['refs'] or any(r not in ids for r in c['refs'])],f'{len(claims)} labelled claims; {len(ids)} evidence notes')
 check('Source minimum',[] if len(sources)>=5 else ['Too few sources'],f'{len(sources)} sources, including one explicitly limited indexed record')
 check('Slide count and Wiki mapping',[] if len(slides)==18 and all((root/(s['wiki']+'.html')).exists() and all(e in ids for e in s['evidence']) for s in slides) else ['Invalid slide mapping'],f'{len(slides)} slides: 15 teaching + 3 appendix')
+check('Bilingual slide coverage',[str(s['number']) for s in slides if not s.get('title_en') or not s.get('body_en') or (s['note'] and not s.get('note_en'))], 'All 18 slides require English title/body and translated caveats alongside Traditional Chinese')
 check('Image files and alt text',[p.name for p,d in docs.items() for a in d.images if not a.get('alt') or not (p.parent/a['src']).exists()], 'Embedded images use local files with nonempty alt text')
 check('JPEG content signature',[p.name for p in (root/'assets').glob('*.jpg') if not p.read_bytes().startswith(b'\xff\xd8\xff')], 'Added after browser testing found HTML error responses saved as JPG')
 check('No checkmark or cross-mark glyphs',[str(p.relative_to(root)) for p in docs if re.search('[\u2713\u2714\u2717\u2718\u2705\u274c\u274e]',p.read_text(encoding='utf-8'))],'HTML text scanned')

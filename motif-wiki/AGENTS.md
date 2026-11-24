@@ -1,6 +1,9 @@
 # Persian Rug Motifs: editorial and development rules
 
-This independent educational project creates an English linked Wiki and an 18-slide Traditional Chinese HTML lesson. It is not the Homes & Rugs recommendation app. No personal rug photos, Rug 42, prices, purchase advice or creative stories.
+This independent educational project creates an English linked Wiki and an 18-slide bilingual Traditional Chinese and English HTML lesson. It is not the Homes & Rugs recommendation app. No personal rug photos, Rug 42, prices, purchase advice or creative stories.
+
+## Bilingual update
+Every slide must provide equivalent Chinese and English titles, body text, caveats and exercise answers. Keep shared diagrams and evidence links once per slide. scripts/english.py stores the English slide content. Use lang attributes for both text blocks. Desktop shows language columns, mobile stacks them. Check all 18 slides for both languages and overflow after rebuilding. Preserve uncertainty in translation; never add stronger claims to one language.
 
 ## Evidence first
 Read data/sources.json and data/wiki.json before editing. Each source has an immutable Sxx identifier, public URL, full citation, access date, credibility, limitations and individually addressable excerpt notes. Excerpt notes are concise paraphrases, not verbatim extracts. Never manufacture quotes or universal meanings. Preserve attribution, approximate dates and terms such as probably. Observation, Historical claim, Interpretation and Uncertain are distinct categories. Each content claim needs evidence IDs, or a clearly identified editorial limitation tied to the scope of those sources. Absence of evidence here is not proof of historical absence.
